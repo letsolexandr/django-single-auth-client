@@ -144,7 +144,3 @@ REST_FRAMEWORK = {
 }
 
 
-AUTH_SERVER_CHECK_TOKEN_URL = 'http://localhost:8000/sync-server/sync-endpoint/'
-AUTH_SERVER_SECRET_KEY = 'test'
-AUTH_SERVER_CLIENT_ID = 'test_client'
-

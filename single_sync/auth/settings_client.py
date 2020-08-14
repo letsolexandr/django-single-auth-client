@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'drf_yasg',
     'sync_client',
     'sync_server',
 ]
@@ -80,7 +79,7 @@ WSGI_APPLICATION = 'auth.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db_client_v1for.sqlite3'),
     }
 }
 
@@ -141,8 +140,8 @@ REST_FRAMEWORK = {
 }
 
 AUTH_SERVER_CHECK_TOKEN_URL = 'http://localhost:8000/sync-server/sync-endpoint/'
-AUTH_SERVER_MAX_TOKEN_AGE = 10 * 60  ##10 minutes
-AUTH_SERVER_SECRET_KEY = 'test'
-AUTH_SERVER_CLIENT_ID = 'test_client'
+AUTH_SERVER_SYNC_PERMISSION_URL = 'http://localhost:8000/sync-server/sync-permissions/'
 
-##from rest_framework.permissions import IsAuthenticated
+AUTH_SERVER_MAX_TOKEN_AGE = 1 ##10 minutes
+AUTH_SERVER_SECRET_KEY = 'test_secret'
+AUTH_SERVER_CLIENT_ID = 'test_client'
